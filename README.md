@@ -102,6 +102,5 @@ Apache License 2.0 — see [LICENSE](LICENSE)
 
 ## Author
 
-**PaavanAadi Labs** — AI Governance Consulting for Canadian Financial Institutions
-
-AIGP Certified | Databricks Certified
+**Ashoka Sangapallar** — Databricks/AI Specialist
+Databricks Certified
