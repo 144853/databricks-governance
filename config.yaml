@@ -1,0 +1,182 @@
+workspace:
+  catalog: "main"
+  schema: "default"
+  model_registry_prefix: ""
+
+thresholds:
+  bias_disparate_impact: 0.8
+  drift_psi_critical: 0.25
+  drift_psi_warning: 0.10
+  pii_score_threshold: 0.5
+  explainability_concentration: 0.6
+  stale_credential_days: 90
+  key_rotation_days: 365
+  model_review_days: 180
+
+osfi_e23:
+  version: "2023.09"
+  controls:
+    MRM-1.1:
+      title: "Enterprise Model Risk Governance Framework"
+      description: "Board-approved framework covering AI/ML model lifecycle"
+      check: "check_governance_framework"
+      severity_if_missing: "HIGH"
+    MRM-1.2:
+      title: "Roles and Responsibilities"
+      description: "Clear ownership — model owners, developers, validators, independent MRM"
+      check: "check_roles_separation"
+      severity_if_missing: "HIGH"
+    MRM-2.1:
+      title: "Model Inventory"
+      description: "Comprehensive registry with purpose, owner, risk tier, validation status"
+      check: "check_model_inventory"
+      severity_if_missing: "CRITICAL"
+    MRM-2.2:
+      title: "Risk Tiering"
+      description: "Classification by materiality, complexity, criticality"
+      check: "check_risk_tiering"
+      severity_if_missing: "HIGH"
+    MRM-3.1:
+      title: "Development Standards"
+      description: "Documented data selection, feature engineering, testing procedures"
+      check: "check_development_docs"
+      severity_if_missing: "MEDIUM"
+    MRM-3.2:
+      title: "Technical Documentation"
+      description: "Sufficient detail for independent replication"
+      check: "check_technical_docs"
+      severity_if_missing: "MEDIUM"
+    MRM-3.3:
+      title: "Bias and Fairness Testing"
+      description: "Pre-deployment bias testing; material bias requires senior approval"
+      check: "check_bias_testing"
+      severity_if_missing: "HIGH"
+    MRM-4.1:
+      title: "Independent Validation"
+      description: "Validation functionally separate from development"
+      check: "check_independent_validation"
+      severity_if_missing: "HIGH"
+    MRM-4.2:
+      title: "Challenger Models"
+      description: "Benchmarking against alternative approaches"
+      check: "check_challenger_models"
+      severity_if_missing: "MEDIUM"
+    MRM-5.1:
+      title: "Performance Monitoring"
+      description: "Ongoing KPIs with escalation thresholds"
+      check: "check_performance_monitoring"
+      severity_if_missing: "HIGH"
+    MRM-5.2:
+      title: "Drift Detection"
+      description: "Automated concept, data, prediction drift with retraining triggers"
+      check: "check_drift_detection"
+      severity_if_missing: "HIGH"
+    MRM-6.1:
+      title: "Usage Constraints"
+      description: "Documented limitations; out-of-scope use requires approval"
+      check: "check_usage_constraints"
+      severity_if_missing: "MEDIUM"
+    MRM-6.2:
+      title: "Override Procedures"
+      description: "Documented override process with periodic review"
+      check: "check_override_procedures"
+      severity_if_missing: "MEDIUM"
+    MRM-7.1:
+      title: "Vendor Model Due Diligence"
+      description: "Assessment of third-party models including LLM APIs"
+      check: "check_vendor_due_diligence"
+      severity_if_missing: "HIGH"
+    MRM-7.2:
+      title: "Vendor Model Monitoring"
+      description: "Ongoing monitoring with material change re-validation"
+      check: "check_vendor_monitoring"
+      severity_if_missing: "MEDIUM"
+    MRM-8.1:
+      title: "Board Reporting"
+      description: "At least quarterly reporting to board/senior management"
+      check: "check_board_reporting"
+      severity_if_missing: "MEDIUM"
+    MRM-8.2:
+      title: "Escalation Procedures"
+      description: "Defined escalation for material model issues"
+      check: "check_escalation_procedures"
+      severity_if_missing: "MEDIUM"
+
+pipeda:
+  version: "2000_c5_2024"
+  controls:
+    P1.1:
+      title: "Privacy Officer Designation"
+      description: "Designated privacy officer with public contact info"
+      check: "check_privacy_officer"
+      severity_if_missing: "HIGH"
+    P1.2:
+      title: "Third-Party Contractual Protection"
+      description: "Contracts protect personal info transferred to processors"
+      check: "check_third_party_contracts"
+      severity_if_missing: "HIGH"
+    P2.1:
+      title: "Purpose Documentation"
+      description: "Documented purpose for each personal information category"
+      check: "check_purpose_docs"
+      severity_if_missing: "MEDIUM"
+    P2.2:
+      title: "New Purpose Evaluation"
+      description: "Fresh consent for data repurposing (e.g., model training)"
+      check: "check_purpose_evaluation"
+      severity_if_missing: "HIGH"
+    P3.1:
+      title: "Meaningful Consent"
+      description: "Consent discloses automated decision-making with withdrawal option"
+      check: "check_meaningful_consent"
+      severity_if_missing: "CRITICAL"
+    P3.2:
+      title: "Sensitive Information Consent"
+      description: "Express consent for health, financial, biometric data"
+      check: "check_sensitive_consent"
+      severity_if_missing: "CRITICAL"
+    P4.1:
+      title: "Data Minimization"
+      description: "Collect only necessary personal information"
+      check: "check_data_minimization"
+      severity_if_missing: "MEDIUM"
+    P5.1:
+      title: "Access Controls and Audit Logs"
+      description: "Prevent unauthorized secondary use in AI systems"
+      check: "check_access_controls"
+      severity_if_missing: "HIGH"
+    P5.2:
+      title: "Retention and Disposal"
+      description: "Schedules and automated disposal including embeddings/vectors"
+      check: "check_retention_policy"
+      severity_if_missing: "HIGH"
+    P6.1:
+      title: "Data Quality Controls"
+      description: "Personal info accuracy in AI; stale/incorrect data detectable"
+      check: "check_data_quality"
+      severity_if_missing: "MEDIUM"
+    P7.1:
+      title: "Security Safeguards"
+      description: "Encryption, access controls, secure model serving"
+      check: "check_security_safeguards"
+      severity_if_missing: "HIGH"
+    P7.2:
+      title: "Breach Detection and Notification"
+      description: "Incident response per OPC requirements for AI systems"
+      check: "check_breach_response"
+      severity_if_missing: "CRITICAL"
+    P8.1:
+      title: "AI Transparency"
+      description: "Privacy policies disclose AI/automated decision-making"
+      check: "check_ai_transparency"
+      severity_if_missing: "MEDIUM"
+    P9.1:
+      title: "Individual Access Rights"
+      description: "Access to personal info in AI systems within 30 days"
+      check: "check_access_rights"
+      severity_if_missing: "HIGH"
+    P10.1:
+      title: "Complaints Process"
+      description: "Documented process; AI decision complaints investigated"
+      check: "check_complaints_process"
+      severity_if_missing: "MEDIUM"

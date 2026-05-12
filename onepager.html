@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Databricks Governance for Canadian FIs — PaavanAadi Labs</title>
+<style>
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: 8.5in; min-height: 11in; max-height: 11in; overflow: hidden;
+    margin: 0 auto; padding: 0.45in 0.55in 0.35in;
+    color: #1e293b; background: white;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 3px solid #1e40af; margin-bottom: 14px;
+  }
+  .header h1 { font-size: 19px; color: #1e40af; line-height: 1.2; }
+  .header h1 span { display: block; font-size: 12px; font-weight: 400; color: #64748b; margin-top: 2px; }
+  .logo { font-size: 13px; font-weight: 700; color: #1e40af; text-align: right; line-height: 1.3; }
+  .logo span { display: block; font-size: 10px; font-weight: 400; color: #64748b; }
+
+  /* ── Value prop ── */
+  .value-prop {
+    background: linear-gradient(135deg, #1e3a5f, #1e40af);
+    color: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 14px;
+  }
+  .value-prop p { font-size: 12.5px; line-height: 1.5; }
+  .value-prop strong { color: #93c5fd; }
+
+  /* ── Grid layouts ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+
+  /* ── Section cards ── */
+  .section { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; }
+  .section h3 { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.5px; color: #1e40af; margin-bottom: 8px; }
+
+  /* ── Control tables ── */
+  .ctrl-table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+  .ctrl-table th { text-align: left; padding: 3px 6px; background: #e2e8f0; color: #475569; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .ctrl-table td { padding: 3px 6px; border-bottom: 1px solid #f1f5f9; }
+  .ctrl-table td:first-child { font-weight: 600; color: #1e40af; white-space: nowrap; width: 62px; }
+
+  /* ── Stat boxes ── */
+  .stat-box { text-align: center; padding: 10px 8px; background: white; border: 1px solid #e2e8f0; border-radius: 8px; }
+  .stat-box .num { font-size: 26px; font-weight: 700; color: #1e40af; }
+  .stat-box .label { font-size: 9.5px; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 2px; }
+
+  /* ── How it works ── */
+  .flow { display: flex; align-items: center; gap: 0; margin: 6px 0; }
+  .flow-step {
+    flex: 1; text-align: center; padding: 8px 4px;
+    background: white; border: 1px solid #e2e8f0; border-radius: 6px;
+    font-size: 10px; line-height: 1.3;
+  }
+  .flow-step strong { display: block; font-size: 11px; color: #1e40af; margin-bottom: 2px; }
+  .flow-arrow { font-size: 16px; color: #94a3b8; margin: 0 4px; flex-shrink: 0; }
+
+  /* ── Checks list ── */
+  .checks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; font-size: 10.5px; }
+  .checks-grid .check { display: flex; align-items: baseline; gap: 4px; }
+  .checks-grid .dot { width: 5px; height: 5px; border-radius: 50%; background: #1e40af; flex-shrink: 0; margin-top: 4px; }
+
+  /* ── Footer ── */
+  .footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 10px; border-top: 1px solid #e2e8f0; margin-top: 10px;
+    font-size: 9.5px; color: #94a3b8;
+  }
+
+  /* ── Tags ── */
+  .tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 9px; font-weight: 600; }
+  .tag-blue { background: #dbeafe; color: #1e40af; }
+  .tag-green { background: #dcfce7; color: #16a34a; }
+  .tag-amber { background: #fef3c7; color: #b45309; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Databricks Governance for Canadian Financial Institutions
+    <span>Automated OSFI E-23 & PIPEDA Compliance on the Lakehouse</span>
+  </h1>
+  <div class="logo">PaavanAadi Labs<span>AI Governance Consulting</span></div>
+</div>
+
+<!-- Value Proposition -->
+<div class="value-prop">
+  <p>A <strong>ready-to-deploy audit toolkit</strong> that runs natively on Databricks to continuously assess ML pipelines, Unity Catalog assets, and data workflows against <strong>OSFI E-23 Model Risk Management</strong> and <strong>PIPEDA Fair Information Principles</strong>. Purpose-built for Canadian banks, insurers, and credit unions operating on the Databricks Lakehouse.</p>
+</div>
+
+<!-- Stats Row -->
+<div class="three-col">
+  <div class="stat-box"><div class="num">31</div><div class="label">Regulatory Controls</div></div>
+  <div class="stat-box"><div class="num">2</div><div class="label">Canadian Frameworks</div></div>
+  <div class="stat-box"><div class="num">4</div><div class="label">Notebooks to Deploy</div></div>
+</div>
+
+<!-- Two main columns -->
+<div class="two-col">
+
+  <!-- Left: OSFI E-23 -->
+  <div class="section">
+    <h3>OSFI E-23 — Model Risk Management <span class="tag tag-blue">16 Controls</span></h3>
+    <table class="ctrl-table">
+      <tr><th>Control</th><th>What We Check</th></tr>
+      <tr><td>MRM-1</td><td>Governance framework tags &amp; role separation on catalog grants</td></tr>
+      <tr><td>MRM-2</td><td>Model inventory completeness in MLflow (owner, risk tier, purpose)</td></tr>
+      <tr><td>MRM-3</td><td>Development docs, technical replicability, bias testing artifacts</td></tr>
+      <tr><td>MRM-4</td><td>Independent validation evidence (validated_by tag), challengers</td></tr>
+      <tr><td>MRM-5</td><td>Lakehouse Monitoring tables, automated drift detection pipelines</td></tr>
+      <tr><td>MRM-6</td><td>Usage constraints documentation, override procedure tracking</td></tr>
+      <tr><td>MRM-7</td><td>Vendor/foundation model due diligence on serving endpoints</td></tr>
+      <tr><td>MRM-8</td><td>Board reporting cadence, escalation procedure documentation</td></tr>
+    </table>
+  </div>
+
+  <!-- Right: PIPEDA -->
+  <div class="section">
+    <h3>PIPEDA — Fair Information Principles <span class="tag tag-green">15 Controls</span></h3>
+    <table class="ctrl-table">
+      <tr><th>Principle</th><th>What We Check</th></tr>
+      <tr><td>P1</td><td>Privacy officer designation, third-party DPA contracts</td></tr>
+      <tr><td>P2–P3</td><td>Purpose documentation, meaningful consent for automated decisions</td></tr>
+      <tr><td>P4</td><td>PII column detection in information_schema, data minimization</td></tr>
+      <tr><td>P5</td><td>Access control breadth on PII tables, retention &amp; disposal schedules</td></tr>
+      <tr><td>P6</td><td>Data quality controls for personal information accuracy</td></tr>
+      <tr><td>P7</td><td>Encryption safeguards, breach detection &amp; OPC notification</td></tr>
+      <tr><td>P8–P9</td><td>AI transparency disclosure, data subject access within 30 days</td></tr>
+      <tr><td>P10</td><td>Complaints process for AI-driven decision challenges</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- How It Works -->
+<div class="section" style="margin-bottom: 14px;">
+  <h3>How It Works</h3>
+  <div class="flow">
+    <div class="flow-step"><strong>01 Setup</strong>Configure catalog,<br>schema &amp; framework</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><strong>02 Checks</strong>31 automated checks<br>query Unity Catalog &amp; MLflow</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><strong>03 Audit</strong>Score controls, map<br>findings to regulations</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><strong>04 Report</strong>HTML dashboard with<br>scores &amp; remediation</div>
+  </div>
+</div>
+
+<!-- Bottom two columns -->
+<div class="two-col">
+  <!-- Databricks-Native Checks -->
+  <div class="section">
+    <h3>Databricks-Native Data Sources</h3>
+    <div class="checks-grid">
+      <div class="check"><div class="dot"></div><div>Unity Catalog table &amp; column tags</div></div>
+      <div class="check"><div class="dot"></div><div>information_schema PII scanning</div></div>
+      <div class="check"><div class="dot"></div><div>SHOW GRANTS access control audit</div></div>
+      <div class="check"><div class="dot"></div><div>MLflow model registry tags</div></div>
+      <div class="check"><div class="dot"></div><div>MLflow run parameters &amp; metrics</div></div>
+      <div class="check"><div class="dot"></div><div>Serving endpoint configurations</div></div>
+      <div class="check"><div class="dot"></div><div>Lakehouse Monitoring tables</div></div>
+      <div class="check"><div class="dot"></div><div>Delta retention properties</div></div>
+    </div>
+  </div>
+
+  <!-- Scoring & Delivery -->
+  <div class="section">
+    <h3>Scoring &amp; Delivery</h3>
+    <p style="font-size: 10.5px; line-height: 1.5; margin-bottom: 6px;">
+      <strong>Formula:</strong> <code style="background:#e2e8f0;padding:1px 4px;border-radius:3px;font-size:10px;">(compliant + 0.5 × partial) / total × 100</code>
+    </p>
+    <p style="font-size: 10.5px; line-height: 1.5; margin-bottom: 6px;">
+      <span class="tag tag-amber">HIGH / CRITICAL</span> → Non-Compliant &nbsp;
+      <span class="tag tag-amber">MEDIUM / LOW</span> → Partial
+    </p>
+    <p style="font-size: 10.5px; line-height: 1.5; margin-bottom: 6px;">
+      <strong>Outputs:</strong> Interactive notebook results, Spark DataFrame of findings, exportable HTML report with per-control detail and remediation guidance.
+    </p>
+    <p style="font-size: 10.5px; line-height: 1.5;">
+      <strong>Modes:</strong> <span class="tag tag-blue">LIVE</span> queries your workspace in real-time. <span class="tag tag-green">DEMO</span> generates realistic sample findings for stakeholder presentations.
+    </p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div>PaavanAadi Labs &bull; AI Governance Audit Framework &bull; 2025</div>
+  <div>AIGP Certified &bull; Databricks Certified &bull; ashoka.sj@gmail.com</div>
+</div>
+
+</body>
+</html>
